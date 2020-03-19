@@ -1,4 +1,6 @@
 import React from 'react';
+import './Task.css'
+
 
 export default (props) => {
     const {task,deleteTask,editTask}=props;
