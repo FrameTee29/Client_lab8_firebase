@@ -5,11 +5,8 @@ import { firestore } from './index'
 
 function App() {
 
-  const [tasks, setTasks] = useState([
-    { id: 1, name: "do homework" },
-    { id: 2, name: "write node js" },
-  ])
-
+  const [tasks, setTasks] = useState([])
+  const [name , setName] = useState('')
   useEffect(() => {
     retriveData()
   }, [])
@@ -42,9 +39,18 @@ function App() {
     }
   }
 
+
+  const addTask =()=>{
+    let id = (tasks.length ===0)?1:tasks[tasks.length-1].id +1;
+    console.log("id = ="+id);
+    firestore.collection("tasks").doc(id+'').set({id,name});
+  }
+
   return (
     <div>
       <h1>Todo</h1>
+      <input type="text" name="name" onChange={e => setName(e.target.value)} />
+      <button onClick={addTask}>Submit</button>
       <ul>{renderTask()}</ul>
     </div>
   );
