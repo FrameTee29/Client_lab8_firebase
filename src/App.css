@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap');
+body{
+  font-family: 'Baloo Chettan 2', cursive;
+}
+
+
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -38,5 +47,26 @@
 }
 
 ul{
+
+}
+
+.ContainerHeader{
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  margin: 0 0 10px 0;
+}
+
+.Show{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.put{
+  width: 120px;
+  margin-top: 5px;
 }

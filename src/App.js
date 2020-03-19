@@ -28,8 +28,8 @@ function App() {
     firestore.collection('tasks').doc(id + '').delete();
   }
 
-  const editTask=(id)=>{
-    firestore.collection('tasks').doc(id+'').set({id,name});
+  const editTask = (id) => {
+    firestore.collection('tasks').doc(id + '').set({ id, name });
   }
 
   const renderTask = () => {
@@ -38,8 +38,8 @@ function App() {
         tasks.map((task, index) => {
           return (
             <Tasks key={index} task={task}
-                    deleteTask={deleteTask}
-                    editTask={editTask}/>
+              deleteTask={deleteTask}
+              editTask={editTask} />
           )
         })
       )
@@ -56,11 +56,13 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Todo</h1>
-      <input type="text" name="name" onChange={e => setName(e.target.value)} />
-      <button onClick={addTask}>Submit</button>
-      <ul>{renderTask()}</ul>
+    <div className="App">
+      <div className="ContainerHeader">
+        <h1>Todo</h1>
+        <input type="text" name="name" className="" onChange={e => setName(e.target.value)} />
+        <button onClick={addTask} type="button" class="btn btn-warning put">Submit</button>
+      </div>
+      <div className="Show">{renderTask()}</div>
     </div>
   );
 }
