@@ -59,7 +59,7 @@ function App() {
     <div className="App">
       <div className="ContainerHeader">
         <h1>Todo</h1>
-        <input type="text" name="name" className="" onChange={e => setName(e.target.value)} />
+        <input type="text" name="name" class="alert alert-danger" placeholder="Your name ..." onChange={e => setName(e.target.value)} />
         <button onClick={addTask} type="button" class="btn btn-warning put">Submit</button>
       </div>
       <div className="Show">{renderTask()}</div>
