@@ -12,11 +12,17 @@ function App() {
 
   useEffect(() => {
     retriveData()
-  },[])
+  }, [])
 
   const retriveData = () => {
-    firestore.collection("task").onSnapshot((snapshot) => {
-      console.log(snapshot)
+    firestore.collection("tasks").onSnapshot((snapshot) => {
+      console.log(snapshot.docs)
+      let mytasks = snapshot.docs.map(d => {
+        const { id, name } = d.data();
+        console.log(id, name)
+        return { id, name };
+      });
+      setTasks(mytasks)
     })
   }
   const renderTask = () => {
