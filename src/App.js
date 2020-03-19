@@ -6,7 +6,7 @@ import { firestore } from './index'
 function App() {
 
   const [tasks, setTasks] = useState([])
-  const [name , setName] = useState('')
+  const [name, setName] = useState('')
   useEffect(() => {
     retriveData()
   }, [])
@@ -23,10 +23,13 @@ function App() {
     })
   }
 
-  const deleteTask =(id)=>{
-    firestore.collection('tasks').doc(id+'').delete();
+  const deleteTask = (id) => {
+    firestore.collection('tasks').doc(id + '').delete();
   }
 
+  const editTask=(id)=>{
+    firestore.collection('tasks').doc(id+'').set({id,name});
+  }
 
   const renderTask = () => {
     if (tasks && tasks.length) {
@@ -35,7 +38,8 @@ function App() {
           return (
             <li key={index}>
               {task.id} : {task.name}
-              <button onClick={()=>deleteTask(task.id)}>Delete</button>
+              <button onClick={() => deleteTask(task.id)}>Delete</button>
+              <button onClick={() => editTask(task.id)}>Delete</button>
             </li>
           )
         })
@@ -47,9 +51,9 @@ function App() {
   }
 
 
-  const addTask =()=>{
-    let id = (tasks.length ===0)?1:tasks[tasks.length-1].id +1;
-    firestore.collection("tasks").doc(id+'').set({id,name});
+  const addTask = () => {
+    let id = (tasks.length === 0) ? 1 : tasks[tasks.length - 1].id + 1;
+    firestore.collection("tasks").doc(id + '').set({ id, name });
   }
 
   return (
