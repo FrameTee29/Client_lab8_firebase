@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import config from './config';
+import firebaseConfig from './config';
 import firebase from 'firebase/app';
 import 'firebase/firestore'
 
@@ -11,10 +11,10 @@ import 'firebase/firestore'
 
 
 if(firebase.apps.length ===0){
-    firebase.initailizeApp(config)
+    firebase.initializeApp(firebaseConfig)
 }
 
-export const firestore = firebase=firestore();
+export const firestore = firebase.firestore();
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

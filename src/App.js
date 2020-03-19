@@ -15,7 +15,7 @@ function App() {
   },[])
 
   const retriveData = () => {
-    firestore.collection("task").onSnapshotS((snapshot) => {
+    firestore.collection("task").onSnapshot((snapshot) => {
       console.log(snapshot)
     })
   }
