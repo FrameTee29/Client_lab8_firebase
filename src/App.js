@@ -22,6 +22,12 @@ function App() {
       setTasks(mytasks)
     })
   }
+
+  const deleteTask =(id)=>{
+    firestore.collection('tasks').doc(id+'').delete();
+  }
+
+
   const renderTask = () => {
     if (tasks && tasks.length) {
       return (
@@ -29,6 +35,7 @@ function App() {
           return (
             <li key={index}>
               {task.id} : {task.name}
+              <button onClick={()=>deleteTask(task.id)}>Delete</button>
             </li>
           )
         })
@@ -42,7 +49,6 @@ function App() {
 
   const addTask =()=>{
     let id = (tasks.length ===0)?1:tasks[tasks.length-1].id +1;
-    console.log("id = ="+id);
     firestore.collection("tasks").doc(id+'').set({id,name});
   }
 
