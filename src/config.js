@@ -1,12 +1,12 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyCKISSfUgjeQvnx9fygtMQ8s_8_42KeKZ8",
-    authDomain: "todo-e7856.firebaseapp.com",
-    databaseURL: "https://todo-e7856.firebaseio.com",
-    projectId: "todo-e7856",
-    storageBucket: "todo-e7856.appspot.com",
-    messagingSenderId: "254922308987",
-    appId: "1:254922308987:web:e127421b3b97da94e591de",
-    measurementId: "G-T0NY9V8VWF"
-  };
+  apiKey: "AIzaSyBCyk-9pZ_3arwhQCDN19zbZDoCwAvRW8o",
+  authDomain: "todo-4643d.firebaseapp.com",
+  databaseURL: "https://todo-4643d.firebaseio.com",
+  projectId: "todo-4643d",
+  storageBucket: "todo-4643d.appspot.com",
+  messagingSenderId: "288359698385",
+  appId: "1:288359698385:web:b8d4089e074f55c8679af0",
+  measurementId: "G-HDPV16NQJS"
+};
 
 export default firebaseConfig;
