@@ -39,7 +39,7 @@ function App() {
             <li key={index}>
               {task.id} : {task.name}
               <button onClick={() => deleteTask(task.id)}>Delete</button>
-              <button onClick={() => editTask(task.id)}>Delete</button>
+              <button onClick={() => editTask(task.id)}>Edit</button>
             </li>
           )
         })
