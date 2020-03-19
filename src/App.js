@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { firestore } from './index'
+import Tasks from './Tasks'
 
 function App() {
 
@@ -36,11 +37,9 @@ function App() {
       return (
         tasks.map((task, index) => {
           return (
-            <li key={index}>
-              {task.id} : {task.name}
-              <button onClick={() => deleteTask(task.id)}>Delete</button>
-              <button onClick={() => editTask(task.id)}>Edit</button>
-            </li>
+            <Tasks key={index} task={task}
+                    deleteTask={deleteTask}
+                    editTask={editTask}/>
           )
         })
       )
