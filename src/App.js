@@ -52,7 +52,7 @@ function App() {
 
   const addTask = () => {
     let id = (tasks.length === 0) ? 1 : tasks[tasks.length - 1].id + 1;
-    firestore.collection("tasks").doc(id + '').set({ id, name });
+    firestore.collection("tasks").doc(id +'').set({ id, name });
   }
 
   return (
