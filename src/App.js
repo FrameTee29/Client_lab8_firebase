@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { firestore } from './index'
 
 function App() {
 
@@ -9,9 +10,15 @@ function App() {
     { id: 2, name: "write node js" },
   ])
 
-  useEffect(() => { 
-    
-  })
+  useEffect(() => {
+    retriveData()
+  },[])
+
+  const retriveData = () => {
+    firestore.collection("task").onSnapshotS((snapshot) => {
+      console.log(snapshot)
+    })
+  }
   const renderTask = () => {
     if (tasks && tasks.length) {
       return (
